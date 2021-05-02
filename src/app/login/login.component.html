@@ -1,0 +1,23 @@
+<div class="auth-container">
+  <div class="auth-content">
+    <div>
+      <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+        <ngb-alert *ngIf="errors" type="danger">{{errors}}
+        </ngb-alert>
+        <div class="form-group">
+          <label class="label" for="email">Email</label>
+          <input type="email" id="email" formControlName="email" required class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="label" for="password">Password</label>
+          <input type="password" id="password" formControlName="password" class="form-control">
+        </div>
+        <div class="btn-container">
+          <button type="submit" class="btn btn-primary w-100">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
