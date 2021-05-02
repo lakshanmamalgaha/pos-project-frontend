@@ -1,1 +1,25 @@
-<p>stock works!</p>
+<div class="w-100 py-2">
+  <h1 class="px-4">Stocks</h1>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>
+        #
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let stock of stockList">
+      <td>{{stock.id}}</td>
+      <td>{{stock.name}}</td>
+      <td>{{stock.description}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,1 +1,29 @@
-<p>sales works!</p>
+<div class="w-100 py-2">
+  <h1 class="px-4">Sales</h1>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>
+        #
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Type
+      </th>
+      <th>
+        Amount
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let sales of salesList">
+      <td>{{sales.id}}</td>
+      <td>{{sales.description}}</td>
+      <td>{{sales.type}}</td>
+      <td>{{sales.amount}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
