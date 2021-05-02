@@ -22,15 +22,15 @@ export class ItemsComponent implements OnInit {
       offset: 0,
       limit: 100,
       skip: 0,
-      order: 'name',
+      order: 'id',
       fields: {
         id: true,
         name: true,
-        description: true
+        description: true,
+        price: true
       }
     };
     this.itemService.loadItems(JSON.stringify(filters)).subscribe(next => {
-      console.log(next);
       this.itemList = next;
     });
   }

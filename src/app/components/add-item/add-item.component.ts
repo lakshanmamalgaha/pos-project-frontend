@@ -12,7 +12,8 @@ import {Router} from '@angular/router';
 export class AddItemComponent implements OnInit {
   itemForm = new FormGroup({
     name: new FormControl(''),
-    description: new FormControl('')
+    description: new FormControl(''),
+    price: new FormControl(0)
   });
 
   constructor(private itemService: ItemService, private router: Router) {
