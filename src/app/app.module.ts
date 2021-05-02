@@ -18,6 +18,8 @@ import { AddItemComponent } from './components/add-item/add-item.component';
 import { StockComponent } from './components/stock/stock.component';
 import { SalesComponent } from './components/sales/sales.component';
 import { ReportsComponent } from './components/reports/reports.component';
+import { SalaryComponent } from './components/salary/salary.component';
+import { AddSalaryComponent } from './components/add-salary/add-salary.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ReportsComponent } from './components/reports/reports.component';
     AddItemComponent,
     StockComponent,
     SalesComponent,
-    ReportsComponent
+    ReportsComponent,
+    SalaryComponent,
+    AddSalaryComponent
   ],
   imports: [
     BrowserModule,

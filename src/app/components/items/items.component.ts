@@ -35,4 +35,12 @@ export class ItemsComponent implements OnInit {
     });
   }
 
+  delete(id: number | undefined): void {
+    if (id) {
+      this.itemService.deleteItem(id).subscribe(() => {
+        this.itemList = this.itemList.filter(s => s.id !== id);
+      });
+    }
+  }
+
 }

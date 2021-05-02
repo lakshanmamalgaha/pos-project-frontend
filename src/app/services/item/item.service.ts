@@ -18,9 +18,27 @@ export class ItemService {
     );
   }
 
-  loadItems(filters: any): Observable<Item[]>{
+  loadItems(filters: any): Observable<Item[]> {
     return this.httpClient.get<Item[]>(
       `${environment.apiURL}items?filter=${filters}`
+    );
+  }
+
+  loadItemsById(id: number, filters: any): Observable<Item> {
+    return this.httpClient.get<Item>(
+      `${environment.apiURL}items/${id}?filter=${filters}`
+    );
+  }
+
+  deleteItem(id: number): Observable<void> {
+    return this.httpClient.delete<void>(
+      `${environment.apiURL}items/${id}`
+    );
+  }
+
+  editItem(id: number, item: Item): Observable<Item> {
+    return this.httpClient.patch<Item>(
+      `${environment.apiURL}items/${id}`, item
     );
   }
 }

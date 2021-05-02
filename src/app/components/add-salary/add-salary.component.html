@@ -1,0 +1,32 @@
+<div class="w-100 p-5">
+  <h1>{{mode === "add" ? "Add" : "Edit"}} Employee Salary</h1>
+  <div class="item-form">
+    <form [formGroup]="salaryForm">
+      <div class="form-group">
+        <label for="employeeName">Employee Name</label>
+        <input id="employeeName" type="text" formControlName="employeeName" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="type">Type</label>
+        <select id="type" formControlName="type" class="form-control">
+          <option value="Hourly">Hourly</option>
+          <option value="Daily">Daily</option>
+          <option value="Weekly">Weekly</option>
+          <option value="Monthly">Monthly</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input id="amount" type="number" formControlName="amount" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="bonus">Bonus</label>
+        <input id="bonus" type="number" formControlName="bonus" class="form-control">
+      </div>
+      <div class="form-group">
+        <button *ngIf="mode==='add'" (click)="saveSalary(salaryForm.value)" class="btn btn-primary">Save</button>
+        <button *ngIf="mode==='edit'" (click)="updateSalary(salaryForm.value)" class="btn btn-primary">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

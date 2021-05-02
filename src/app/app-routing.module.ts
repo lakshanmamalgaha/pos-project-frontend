@@ -8,7 +8,8 @@ import {ItemsComponent} from './components/items/items.component';
 import {AddItemComponent} from './components/add-item/add-item.component';
 import {SalesComponent} from './components/sales/sales.component';
 import {StockComponent} from './components/stock/stock.component';
-import {ReportsComponent} from './components/reports/reports.component';
+import {SalaryComponent} from './components/salary/salary.component';
+import {AddSalaryComponent} from './components/add-salary/add-salary.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
         component: AddItemComponent
       },
       {
+        path: 'items/edit/:id',
+        component: AddItemComponent
+      },
+      {
         path: 'sales',
         component: SalesComponent
       },
@@ -38,8 +43,16 @@ const routes: Routes = [
         component: StockComponent
       },
       {
-        path: 'reports',
-        component: ReportsComponent
+        path: 'salary',
+        component: SalaryComponent
+      },
+      {
+        path: 'salary/add',
+        component: AddSalaryComponent
+      },
+      {
+        path: 'salary/edit/:id',
+        component: AddSalaryComponent
       }
     ]
   },

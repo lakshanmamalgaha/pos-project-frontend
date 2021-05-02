@@ -1,0 +1,52 @@
+<div class="w-100">
+  <div class="w-100 d-flex justify-content-end p-4">
+    <a routerLink="add" class="btn btn-primary">Add Employee Salary</a>
+  </div>
+
+  <div class="w-100">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>
+          #
+        </th>
+        <th>
+          Employee Name
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          Amount
+        </th>
+        <th>
+          Bonus
+        </th>
+        <th>
+
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let salary of salaryList">
+        <td>{{salary.id}}</td>
+        <td>{{salary.employeeName}}</td>
+        <td>{{salary.type}}</td>
+        <td>{{salary.amount}}</td>
+        <td>{{salary.bonus}}</td>
+        <td>
+          <div class="d-flex">
+            <div class="px-1">
+              <a [routerLink]="['edit',salary.id]" class="btn btn-sm btn-success">Edit</a>
+            </div>
+            <div class="px-1">
+              <button (click)="delete(salary.id)" class="btn btn-sm btn-danger">Delete</button>
+            </div>
+          </div>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
