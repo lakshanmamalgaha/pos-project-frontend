@@ -1,22 +1,36 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { HomeLayoutComponent } from './home-layout/home-layout.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {LoginComponent} from './login/login.component';
+import {HomeLayoutComponent} from './home-layout/home-layout.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {ToolbarComponent} from './navigation/toolbar/toolbar.component';
+import {SidebarComponent} from './navigation/sidebar/sidebar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { ItemsComponent } from './components/items/items.component';
+import { AddItemComponent } from './components/add-item/add-item.component';
+import { StockComponent } from './components/stock/stock.component';
+import { SalesComponent } from './components/sales/sales.component';
+import { ReportsComponent } from './components/reports/reports.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
-    HomeLayoutComponent
+    HomeLayoutComponent,
+    ToolbarComponent,
+    SidebarComponent,
+    ItemsComponent,
+    AddItemComponent,
+    StockComponent,
+    SalesComponent,
+    ReportsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +38,12 @@ import {ReactiveFormsModule} from '@angular/forms';
     NgbModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSidenavModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

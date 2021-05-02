@@ -1,1 +1,20 @@
-<p>home-layout works!</p>
+<div class="h-100">
+  <app-toolbar (sidenavToggle)="sidenav.toggle()"></app-toolbar>
+  <div class="layout-wrapper">
+    <div class="flex-wrapper">
+      <mat-sidenav-container>
+        <mat-sidenav #sidenav role="navigation" position="start" [opened]="!isMobile"
+                     [mode]="isMobile ? 'over' : 'side'"
+                     [fixedInViewport]="isMobile">
+          <app-sidebar (sidenavClose)="sidenav.close()"></app-sidebar>
+        </mat-sidenav>
+        <mat-sidenav-content>
+          <div class="main-container">
+            <router-outlet></router-outlet>
+          </div>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </div>
+  </div>
+</div>
+

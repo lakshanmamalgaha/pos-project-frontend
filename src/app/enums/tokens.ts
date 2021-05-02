@@ -1,4 +1,3 @@
 export const enum Tokens {
-  ACCESS_TOKEN = 'accessToken',
-  REFRESH_TOKEN = 'refreshToken'
+  ACCESS_TOKEN = 'token',
 }

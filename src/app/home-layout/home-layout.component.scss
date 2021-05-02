@@ -1,0 +1,35 @@
+.layout-wrapper {
+  height: calc(100% - 64px);
+  flex-flow: row wrap;
+  box-sizing: border-box;
+  display: flex;
+  place-content: center;
+  align-items: center;
+}
+
+.flex-wrapper {
+  height: 100%;
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+}
+
+.main-container{
+  background-color: #ffffff;
+  min-height: calc(100% - 64px);
+}
+
+@media (max-width: 768px) {
+  .main-container{
+    min-height: calc(100% - 64px);
+  }
+}

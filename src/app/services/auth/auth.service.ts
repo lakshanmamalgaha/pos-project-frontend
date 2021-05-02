@@ -31,12 +31,12 @@ export class AuthService {
     ).pipe(
       map(response => {
         if (response) {
-          if (response.accessToken) {
-            localStorage.setItem(Tokens.ACCESS_TOKEN, JSON.stringify(response.accessToken));
-            this.accessToken = response.accessToken;
-            this.currentUser = this.helper.decodeToken(response.accessToken);
+          if (response.token) {
+            localStorage.setItem(Tokens.ACCESS_TOKEN, JSON.stringify(response.token));
+            this.accessToken = response.token;
+            this.currentUser = this.helper.decodeToken(response.token);
             this.getCurrentUser.emit(
-              this.helper.decodeToken(response.accessToken)
+              this.helper.decodeToken(response.token)
             );
           }
         }
@@ -52,4 +52,16 @@ export class AuthService {
   public getAccessToken(): string {
     return JSON.parse(localStorage.getItem(Tokens.ACCESS_TOKEN) as string);
   }
+
+  logout(): void {
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/login';
+    this.currentUser = new User();
+    this.accessToken = '';
+    localStorage.clear();
+    this.getCurrentUser.emit();
+    this.router.navigate([this.returnUrl]).finally(() => {
+      console.log('_____Logging out_______');
+    });
+  }
+
 }

@@ -1,0 +1,10 @@
+.item-form{
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+
+  form{
+    max-width: 900px;
+    width: 100%;
+  }
+}

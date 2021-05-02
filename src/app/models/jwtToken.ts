@@ -1,3 +1,3 @@
 export class JwtToken {
-  accessToken?: string;
+  token?: string;
 }
